@@ -33,7 +33,7 @@ class Auth extends CI_Controller {
             $errors = $this->form_validation->error_array();
             $this->session->set_flashdata('errors', $errors);
             $this->session->set_flashdata('input', $this->input->post());
-            redirect('/index.php/auth/login'); // LOGIN
+            redirect('/auth/login'); // LOGIN
         
         } else {
 
@@ -45,7 +45,7 @@ class Auth extends CI_Controller {
                 
             if($cek_login == FALSE)
             {
-                echo '<script>alert("Username yang Anda masukan salah.");window.location.href="'.base_url('/index.php/auth/login').'";</script>';
+                echo '<script>alert("Username yang Anda masukan salah.");window.location.href="'.base_url('/auth/login').'";</script>';
             
             } else {
             
@@ -58,7 +58,7 @@ class Auth extends CI_Controller {
                     redirect('/welcome');
                         
                 } else {
-                    echo '<script>alert("Username atau Password yang Anda masukan salah.");window.location.href="'.base_url('/index.php/auth/login').'";</script>';
+                    echo '<script>alert("Username atau Password yang Anda masukan salah.");window.location.href="'.base_url('/auth/login').'";</script>';
                 }
             }
         }
@@ -70,7 +70,7 @@ class Auth extends CI_Controller {
         $this->load->library('session');
 
         $this->form_validation->set_rules('name', 'Nama', 'required');
-        $this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|max_length[15]|is_unique[tb_users.username]');
+        $this->form_validation->set_rules('username', 'Username', 'required|min_length[4]|max_length[15]|is_unique[tb_users.username]');
         $this->form_validation->set_rules('password', 'Password', 'required|trim');
         
         if ($this->form_validation->run() == FALSE) {
@@ -90,7 +90,7 @@ class Auth extends CI_Controller {
             ];
             $insert = $this->auth_model->register("tb_users", $data);
             if($insert){
-                echo '<script>alert("Sukses! Anda berhasil melakukan register. Silahkan login untuk mengakses data.");window.location.href="'.base_url('index.php/auth/login').'";</script>';
+                echo '<script>alert("Sukses! Anda berhasil melakukan register. Silahkan login untuk mengakses data.");window.location.href="'.base_url('auth/login').'";</script>';
             }
         }
     }
@@ -98,6 +98,6 @@ class Auth extends CI_Controller {
     public function logout()
     {
         $this->session->sess_destroy();
-        echo '<script>alert("Sukses! Anda berhasil logout.");window.location.href="'.base_url('/index.php/auth/login').'";</script>';
+        echo '<script>alert("Sukses! Anda berhasil logout.");window.location.href="'.base_url('/auth/login').'";</script>';
     }
 } 

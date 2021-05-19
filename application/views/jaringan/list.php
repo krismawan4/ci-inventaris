@@ -1,6 +1,6 @@
   
  <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
           <div class="au-card chart-percent-card">
                 <?php echo anchor('Jaringan/add', 'Tambah', array('class' => 'btn btn-success')); ?>
                <?php echo anchor('Jaringan/cetak', 'Print', array('class' => 'btn btn-warning')); ?>

@@ -4,6 +4,11 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Sign Up</h5>
+            <div class="logo text-center mb-4">
+                <a href="#">
+                        <img src="<?php echo base_url() ?>assets/images/icon/hss.png" alt="CoolAdmin" />
+                </a>
+            </div>
             <?php
                 $errors = $this->session->flashdata('errors');
                 if(!empty($errors)){
@@ -18,7 +23,7 @@
                     </div>
                 </div>
             <?php } ?>
-            <form class="form-signin" action="<?php echo base_url('index.php/auth/proses_register'); ?>" method="post">
+            <form class="form-signin" action="<?php echo base_url('auth/proses_register'); ?>" method="post">
               <div class="form-label-group">
                   <label for="inputName">Name</label>
                 <input type="text" name="name" id="text" class="form-control" placeholder="Name" required autofocus>

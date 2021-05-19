@@ -39,7 +39,7 @@
     </head>
 
     <body class="animsition">
-        <div class="page-wrapper">
+        <div class="page-wrapper" >
             <!-- HEADER MOBILE-->
             <header class="header-mobile d-block d-lg-none">
                 <div class="header-mobile__bar">
@@ -96,39 +96,38 @@
             <aside class="menu-sidebar d-none d-lg-block">
                 <div class="logo">
                     <a href="#">
-                         <img src="<?php echo base_url() ?>assets/images/icon/a.png" alt="CoolAdmin" />
+                         <img src="<?php echo base_url() ?>assets/images/icon/hss.png" alt="CoolAdmin" />
                     </a>
                 </div>
                 <div class="menu-sidebar__content js-scrollbar1">
                     <nav class="navbar-sidebar">
                         <ul class="list-unstyled navbar__list">
-                           <li>
+                           <li class="<?php if($this->uri->segment(1)=="Welcome"){echo "active";}?>">
                                 <a href="<?php echo site_url('Welcome') ?>">
                                     <i class="fas fa-home"></i>Home</a>
                             </li>
-
-                            <li>
+                            <li class="<?php if($this->uri->segment(1)=="Jaringan"){echo "active";}?>">
                                 <a href="<?php echo site_url('Jaringan') ?>">
                                     <i class="fas fa-cloud"></i>Jaringan</a>
                             </li>
-                            <li>
+                            <li class="<?php if($this->uri->segment(1)=="Komputer"){echo "active";}?>">
                                 <a href="<?php echo site_url('Komputer') ?>">
                                     <i class="fas fa-desktop"></i>Central Processing Unit</a>
                             </li>
-                            <li>
+                            <li class="<?php if($this->uri->segment(1)=="Printer"){echo "active";}?>">
                                 <a href="<?php echo site_url('Printer') ?>">
                                     <i class="fas fa-print"></i>Printer</a>
                             </li>
-                            <li>
+                            <li class="<?php if($this->uri->segment(1)=="Switch"){echo "active";}?>">
                                 <a href="<?php echo site_url('Hub') ?>">
                                     <i class="fas fa-circle"></i>Switch</a>
                             </li>
-                            <li>
+                            <li class="<?php if($this->uri->segment(1)=="Lokasi"){echo "active";}?>">
                                 <a href="<?php echo site_url('Lokasi') ?>">
                                     <i class="fas  fa-building"></i>lokasi</a>
                             </li>
                             
-                            <li>
+                            <li class="<?php if($this->uri->segment(1)=="Manager"){echo "active";}?>">
                                 <a href="<?php echo site_url('Manager') ?>">
                                     <i class="fas fa-user"></i>Manager</a>
                             </li>
@@ -187,7 +186,7 @@
                 <!-- HEADER DESKTOP-->
 
                 <!-- MAIN CONTENT-->
-                <div class="main-content">
+                <div class="main-content" style="background-color: #a6d6d6;">
 
 
 
@@ -238,6 +237,13 @@
                             <?php echo $contents; ?>
 
 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2021 </p>
+                            </div>
                         </div>
                     </div>
                 </div>
